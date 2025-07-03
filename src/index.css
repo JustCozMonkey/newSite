@@ -13,55 +13,128 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
+  max-width: 560px;
+  background-color: #FFF7ED;
+}
+
+
+.header-box {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+  background-color: #FFF7ED;
+  font-size: 25px;
+  font-weight: bold;
+
+  align-items: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.header-box a {
+  color: #4D4D4D;
 }
 
-button {
+.header-box nav {
+  font-size: 1rem;
+}
+
+.footer-box {
+  background-color: #252525;
+  color: #AAAAAA;
+  padding: 1rem;
+  font-size: 14px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.home-container {
+  background-image: url("D:\Documents\GitHub\newSite\src\assets\home-img.png");
+  padding: 2rem;
+  min-height: 350px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10%;
+  text-align: center;
+}
+
+.home-container a {
+  background-color: #FF8C38;
+  color: white;
+  padding: 1rem 3rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutImg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 150px;
+  width: 100%;
+}
+
+.aboutText {
+  padding: 2rem 8%;
+  text-align: left;
+  color: #161616;
+
+}
+
+.aboutText h2 {
+  font-size: 1.8rem;
+}
+
+.aboutText p {
+  font-size: 1rem;
+}
+
+.aboutBtn {
+  background: #161616;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  color: white;
+  padding: 0.8rem 2rem;
+
 }
-button:hover {
-  border-color: #646cff;
+
+.about-page-cta {
+  background-color: #FFCC8D;
+  padding: 2rem;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.about-page-cta h3 {
+  margin-top: 0px;
 }
+
+.about-page-cta a {
+  margin: 1rem 0;
+}
+
+
+
+
 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
