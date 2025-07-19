@@ -1,23 +1,26 @@
 import React from "react"
-import Header from "./Header"
-import Footer from "./Footer"
-import { BrowserRouter, Routes, Route } from "react-router"
+import { Route, Routes, BrowserRouter } from "react-router"
+import Layer from "./blocks/Layer"
 import Home from "./pages/Home"
 import About from "./pages/About"
+import Support from "./pages/Support"
+import Shop from "./pages/Shop"
+
 function App() {
-  const [count, setCount] = React.useState(0)
+
 
   return (
     <>
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+        <Routes >
+          <Route path="/" element={<Layer />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="support" element={<Support />} />
+            <Route path="shop" element={<Shop />} />
+          </Route>
         </Routes>
-        <Footer />
       </BrowserRouter>
-
     </>
   )
 }
