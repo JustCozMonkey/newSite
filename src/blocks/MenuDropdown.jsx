@@ -3,7 +3,7 @@ import { Outlet } from "react-router";
 
 function MenuDropdown({ children, name }) {
 
-    const [isDown, setIsDown] = React.useState(false)
+    const [isDown, setIsDown] = React.useState(true)
 
     function toggleDown() {
         setIsDown(prev => !prev)

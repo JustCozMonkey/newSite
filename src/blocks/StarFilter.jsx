@@ -30,7 +30,7 @@ function StarFilter({ updateFilter }) {
                     </span>
                 ))}
             </div>
-            <p>Scor selectat: {currentPrice}</p>
+            <p>Selected score: {currentPrice}</p>
         </div>
     )
 
