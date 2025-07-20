@@ -6,7 +6,7 @@ import About from "./pages/About"
 import Support from "./pages/Support"
 import Shop from "./pages/Shop"
 import Products from "./blocks/Products"
-
+import Product from "./blocks/Product"
 function App() {
 
 
@@ -21,6 +21,7 @@ function App() {
             <Route path="shop" element={<Shop />} >
               <Route index element={<Products />} ></Route>
               <Route path="p/:id" element={<Products />} ></Route>
+              <Route path="product/:id" element={<Product />} ></Route>
             </Route>
 
           </Route>

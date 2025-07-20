@@ -47,6 +47,8 @@ function Products() {
 
     }, [])
 
+
+
     function updateFilter(key, value) {
         const newParams = new URLSearchParams(searchParam)
         const existingValues = newParams.getAll(key)
@@ -92,11 +94,11 @@ function Products() {
     const productsElem = displayProducts.map((product, index) => {
         return (
             (index > (numericId - 1) * pageSize - 1 && index < numericId * pageSize) ? (
-                <div key={product.id} className="product">
+                <Link to={`/shop/product/${product.id}`} key={product.id} className="product">
                     <img className="product-img" src={product.image} alt={product.title} />
                     <p>{product.title}</p>
                     <p>{`${product.price}$`}</p>
-                </div>
+                </Link>
             ) : null
         )
     })
