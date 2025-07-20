@@ -14,7 +14,7 @@ function Header() {
             <nav className="nav-links">
                 <NavLink to="about">About</NavLink>
                 <NavLink to="shop">Shop</NavLink>
-                <NavLink to="support">Suport</NavLink>
+                <NavLink to="support">Support</NavLink>
             </nav>
             <div className="theme">
                 <button className={`btn ${theme}`} onClick={toggleTheme}>{theme}</button>

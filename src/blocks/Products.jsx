@@ -1,8 +1,9 @@
 import React from "react";
-import { useSearchParams } from "react-router";
+import { Link, useLocation, useParams, useSearchParams } from "react-router";
 import MenuDropdown from "./MenuDropdown";
 import StarFilter from "./StarFilter";
 import PriceFilter from "./PriceFilter";
+import PageFilter from "./PageFilter";
 
 function Products() {
 
@@ -16,7 +17,10 @@ function Products() {
     const categoryFilter = searchParam.getAll("category")
     const ratingFilter = searchParam.get("rating")
     const priceFilter = searchParam.get("price")
-
+    const { id } = useParams()
+    const pageSize = 8;
+    const location = useLocation();
+    console.log(location)
 
 
     React.useEffect(() => {
@@ -84,13 +88,15 @@ function Products() {
     }, [products, categoryFilter, ratingFilter, priceFilter])
 
 
-    const productsElem = displayProducts.map((product) => {
+    const productsElem = displayProducts.map((product, index) => {
         return (
-            <div key={product.id} className="product">
-                <img className="product-img" src={product.image} alt={product.title} />
-                <p>{product.title}</p>
-                <p>{`${product.price}$`}</p>
-            </div>
+            (index > (id - 1) * pageSize - 1 && index < id * pageSize) ? (
+                <div key={product.id} className="product">
+                    <img className="product-img" src={product.image} alt={product.title} />
+                    <p>{product.title}</p>
+                    <p>{`${product.price}$`}</p>
+                </div>
+            ) : null
         )
     })
 
@@ -112,9 +118,14 @@ function Products() {
                     <PriceFilter updateFilter={updateFilter} />
                 </MenuDropdown>
             </div>
-            <div className="products-display">
-                {productsElem}
+            <div className="products-maping">
+                <div className="products-display">
+                    {productsElem}
+
+                </div>
+                <PageFilter n={productsElem.length} />
             </div>
+
         </div>
     )
 }
