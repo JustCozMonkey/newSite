@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router";
 
 function PriceFilter({ updateFilter }) {
     const [searchParams] = useSearchParams()
-    const currentPrice = Number(searchParams.get("price"))
+    const currentPrice = Number(searchParams.get("price") || 1000)
 
     return (
         <div className="price-container">

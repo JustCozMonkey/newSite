@@ -18,9 +18,10 @@ function Products() {
     const ratingFilter = searchParam.get("rating")
     const priceFilter = searchParam.get("price")
     const { id } = useParams()
+    const numericId = Number(id) || 1;
     const pageSize = 8;
     const location = useLocation();
-    console.log(location)
+
 
 
     React.useEffect(() => {
@@ -90,7 +91,7 @@ function Products() {
 
     const productsElem = displayProducts.map((product, index) => {
         return (
-            (index > (id - 1) * pageSize - 1 && index < id * pageSize) ? (
+            (index > (numericId - 1) * pageSize - 1 && index < numericId * pageSize) ? (
                 <div key={product.id} className="product">
                     <img className="product-img" src={product.image} alt={product.title} />
                     <p>{product.title}</p>
