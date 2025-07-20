@@ -134,7 +134,8 @@ a {
 .products-display {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: left;
   gap: 1rem;
   padding: 0 1rem;
 }
@@ -311,13 +312,14 @@ footer {
 }
 
 @media (max-width: 1200px) {
-  .producs-maping {
+
+  .products-display {
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
 
   .product-description {
-    font-size: 0.5rem;
+    font-size: 0.2rem;
   }
 
   .img-info {
@@ -329,9 +331,11 @@ footer {
     flex-direction: column;
   }
 
+
 }
 
 @media (max-width: 768px) {
+
   .host-page {
     flex-direction: column;
     padding: 1rem;
