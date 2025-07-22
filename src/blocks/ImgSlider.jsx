@@ -26,6 +26,15 @@ function ImgSlider() {
         })
     }
 
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex(prev => (prev + 1) % images.length);
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+
 
     return (
         <div className="img-slider">

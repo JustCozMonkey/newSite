@@ -6,6 +6,8 @@ function Product() {
     const [product, setProduct] = React.useState([])
     const [error, setError] = React.useState([])
 
+
+
     React.useEffect(() => {
         async function fetchProducts() {
             try {
