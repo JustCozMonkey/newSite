@@ -1,5 +1,5 @@
 import React from "react";
-
+import { ArrowBigLeft, ArrowBigRight, Circle, CircleDot } from "lucide-react";
 import img1 from "/src/assets/shop1.jpg"
 import img2 from "/src/assets/shop2.jpg"
 import img3 from "/src/assets/shop3.jpg"
@@ -31,12 +31,16 @@ function ImgSlider() {
         <div className="img-slider">
             <div className="slider-display" style={{ translate: `-${currentIndex * 100}%` }}>
                 {images.map((src, index) => (
-                    <img className="image-dim" src={src} alt={`img-${index}`} key={index} />
+                    <img className="image-dim" src={src} alt={`img-${index}`} key={index} loading="lazy" />
                 ))}
             </div>
-            <button onClick={prevImg}>Prev</button>
-            <button onClick={nextImg}>Next</button>
-            <span>{currentIndex}</span>
+            <button className="slider-arrows" onClick={prevImg} style={{ left: 0 }}><ArrowBigLeft /></button>
+            <button className="slider-arrows" onClick={nextImg} style={{ right: 0 }}><ArrowBigRight /></button>
+            <div className="slider-dots-box" >
+                {images.map((_, index) => (
+                    <button key={index} className="slider-dots" onClick={() => setIndex(index)}>{index === currentIndex ? <CircleDot /> : <Circle />}</button>
+                ))}
+            </div>
         </div>
     )
 }
