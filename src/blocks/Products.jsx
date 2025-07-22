@@ -108,7 +108,7 @@ function Products() {
         <div className="products-container">
             <div className="filtres">
                 <MenuDropdown name={"Category"}>
-                    <button className="filter" onClick={() => updateFilter("category", "men's clothing")}>"Men's clothing"</button>
+                    <button className="filter" onClick={() => updateFilter("category", "men's clothing")}>Men's clothing</button>
                     <button className="filter" onClick={() => updateFilter("category", "jewelery")}>Jewelery</button>
                     <button className="filter" onClick={() => updateFilter("category", "electronics")}>Electronics</button>
                     <button className="filter" onClick={() => updateFilter("category", "women's clothing")}>Women's clothing</button>
