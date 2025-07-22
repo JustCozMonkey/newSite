@@ -1,10 +1,10 @@
 import React from "react";
 import { ArrowBigLeft, ArrowBigRight, Circle, CircleDot } from "lucide-react";
-import img1 from "/src/assets/shop1.jpg"
-import img2 from "/src/assets/shop2.jpg"
-import img3 from "/src/assets/shop3.jpg"
-import img4 from "/src/assets/shop4.jpg"
-import img5 from "/src/assets/shop5.jpg"
+import img1 from "/src/assets/img1.jpg"
+import img2 from "/src/assets/img2.jpg"
+import img3 from "/src/assets/img3.jpg"
+import img4 from "/src/assets/img4.jpg"
+import img5 from "/src/assets/img5.jpg"
 
 
 const images = [
@@ -29,7 +29,7 @@ function ImgSlider() {
     React.useEffect(() => {
         const interval = setInterval(() => {
             setIndex(prev => (prev + 1) % images.length);
-        }, 5000);
+        }, 10000);
 
         return () => clearInterval(interval);
     }, []);
