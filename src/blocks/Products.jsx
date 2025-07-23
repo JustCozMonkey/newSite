@@ -4,6 +4,7 @@ import MenuDropdown from "./MenuDropdown";
 import StarFilter from "./StarFilter";
 import PriceFilter from "./PriceFilter";
 import PageFilter from "./PageFilter";
+import Product from "./Product";
 
 function Products() {
 
@@ -94,11 +95,8 @@ function Products() {
     const productsElem = displayProducts.map((product, index) => {
         return (
             (index > (numericId - 1) * pageSize - 1 && index < numericId * pageSize) ? (
-                <Link to={`/shop/product/${product.id}`} key={product.id} className="product">
-                    <img className="product-img" src={product.image} alt={product.title} />
-                    <p>{product.title}</p>
-                    <p>{`${product.price}$`}</p>
-                </Link>
+                <Product key={product.id} product={product} />
+
             ) : null
         )
     })
