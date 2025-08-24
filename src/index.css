@@ -119,6 +119,7 @@ a {
   height: fit-content;
   width: 100%;
   min-height: 350px;
+  max-width: 250px;
   aspect-ratio: 4/5;
   margin: 0 5px;
   border: 1px solid black;
@@ -148,7 +149,7 @@ a {
 .products-display {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(23%, 1fr));
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
   justify-content: left;
   gap: 1rem;
   padding: 0 1rem;
@@ -209,11 +210,16 @@ h2 {
   aspect-ratio: 1 / 1;
 }
 
+.filters {
+  max-width: 200px;
+  min-height: 180px;
+}
+
 .category-filter {
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-width: 180px;
+
 }
 
 .filter {
